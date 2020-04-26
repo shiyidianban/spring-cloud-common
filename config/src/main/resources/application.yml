@@ -3,7 +3,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/JiangJibo/spring-cloud-common/
+          uri: https://github.com/shiyidianban/spring-cloud-common/
           searchPaths: profile,profile/bank,profile/respo
           username:
           password:
