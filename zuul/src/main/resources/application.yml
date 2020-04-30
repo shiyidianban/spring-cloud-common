@@ -20,6 +20,9 @@ zuul:
     bank-account:
       path: /ba/**
       serviceId: bank-account
+    websocket-demo:
+        path: /we/**
+        serviceId: websocket-demo
     baidu:
       url: https://www.baidu.com
     simple:
@@ -47,7 +50,8 @@ zuul:
         refresh-interval: 60
         type: URL
 
-
+  whitelist:    # zuul白名单配置
+    bank-user: localhost,0:0:0:0:0:0:0:1,127.0.0.1
 
 
 

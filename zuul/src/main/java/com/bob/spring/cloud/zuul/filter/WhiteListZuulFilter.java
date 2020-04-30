@@ -12,6 +12,9 @@ import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.stereotype.Component;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_DECORATION_FILTER_ORDER;
 
 /**
@@ -89,7 +92,20 @@ public class WhiteListZuulFilter extends ZuulFilter {
         }
         if (isUnknownAddress(ip)) {
             ip = request.getRemoteAddr();
+            /*String localIp = "127.0.0.1";
+            String localIpv6 = "0:0:0:0:0:0:0:1";
+            if (ip.equals(localIp) || ip.equals(localIpv6)) {
+                // 根据网卡取本机配置的IP
+                InetAddress inet = null;
+                try {
+                    inet = InetAddress.getLocalHost();
+                    ip = inet.getHostAddress();
+                } catch (UnknownHostException e) {
+                    e.printStackTrace();
+                }
+            }*/
         }
+
         return ip;
     }
 
