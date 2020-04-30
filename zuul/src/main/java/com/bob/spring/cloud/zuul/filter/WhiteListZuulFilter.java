@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.Route;
 import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
+import org.springframework.stereotype.Component;
 
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_DECORATION_FILTER_ORDER;
 
@@ -19,7 +20,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @author Administrator
  * @create 2018-10-27 20:29
  */
-//@Component
+@Component
 public class WhiteListZuulFilter extends ZuulFilter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WhiteListZuulFilter.class);
